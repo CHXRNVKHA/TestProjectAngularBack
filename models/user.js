@@ -1,5 +1,5 @@
 const conn = require('./connection');
-const auction = require('./auction');
+const Auction = require('./auction');
 const Sequelize = require('sequelize');
 
 
@@ -36,6 +36,6 @@ const User = conn.define('user', {
     tableName: 'User',
 });
 
-User.hasMany(auction, { onDelete: 'cascade', onUpdate: 'cascade' });
+User.hasMany(Auction, { onDelete: 'cascade', onUpdate: 'cascade' });
 
 module.exports = User
